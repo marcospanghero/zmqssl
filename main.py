@@ -1,5 +1,5 @@
 import logging
-from StringIO import StringIO
+from io import StringIO
 import time
 import zmq
 
@@ -14,15 +14,15 @@ LOGS.setLevel(LOG_LEVEL)
 
 PROTOCOL = 'sslv3'  # or 'tlsv1'
 
-from server import ZMQTLSServer
-from client import ZMQTLSClient
+from zmqssl.server import ZMQTLSServer
+from zmqssl.client import ZMQTLSClient
 
 
 def Main():
 
-    print "=" * 50
-    print
-    print "=" * 50
+    print("=" * 50)
+    print()
+    print("=" * 50)
     cert, key, ca = ('CA/server.crt', 'CA/server.key', 'CA/ca.crt')
     client_cert, client_key = ('CA/node.crt', 'CA/node.key')
     #client_cert, client_key = (None, None)

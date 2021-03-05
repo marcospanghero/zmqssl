@@ -1,5 +1,5 @@
 from threading import Thread
-from tlszmq import TLSZmq
+from zmqssl.tlszmq import TLSZmq
 import zmq
 
 
@@ -26,7 +26,7 @@ class SSLWrapper(object):
                 if self.tls.can_recv(): 
                     return self.tls.recv()
                     break
-        except Exception, ex:
+        except Exception as ex:
             self.LOG.exception(ex)
 
     def shutdown(self):

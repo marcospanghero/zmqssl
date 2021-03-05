@@ -2,7 +2,7 @@ import zmq
 import time
 
 from threading import Thread
-from tlszmq import TLSZmq
+from zmqssl.tlszmq import TLSZmq
 
 MAX_CACHE_SIZE = 50
 
@@ -78,7 +78,7 @@ class ZMQTLSServer(Thread):
         self.LOG.info("Server exited")
 
     def terminate(self):
-        print "Closing Server"
+        print("Closing Server")
         for conn in self.conns:
-            print 'Terminating', conn
+            print('Terminating', conn)
 
