@@ -1,6 +1,6 @@
 import logging
 import M2Crypto as m
-from StringIO import StringIO
+from io import StringIO
 import zmq
 
 PROTOCOL = 'tlsv1' #'sslv3'  # or 'tlsv1'

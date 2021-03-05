@@ -70,7 +70,7 @@ class ZMQTLSServer(Thread):
                         self.socket.send_multipart([_, enc_rep])
                     elif self.socket.type == zmq.REP:
                         self.socket.send(enc_rep)
-            except Exception, ex:
+            except Exception as ex:
                 self.LOG.exception(ex)
                 break
 
